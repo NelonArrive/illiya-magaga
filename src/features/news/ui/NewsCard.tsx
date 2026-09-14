@@ -62,6 +62,19 @@ export function NewsCard({ article }: NewsCardProps) {
 					</p>
 				)}
 
+				{article.tags.length > 0 && (
+					<div className='flex flex-wrap gap-1.5'>
+						{article.tags.map(tag => (
+							<span
+								key={tag}
+								className='rounded-md bg-gray-100 px-2 py-0.5 text-xs text-gray-500'
+							>
+								{tag}
+							</span>
+						))}
+					</div>
+				)}
+
 				<div className='mt-auto flex flex-col gap-2 pt-1'>
 					{(confidenceLabel || article.sourceName) && (
 						<div className='flex items-center gap-2'>
